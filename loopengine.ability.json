@@ -1,0 +1,15 @@
+{
+  "loopengineVersion": ">=0.1.62 <1.0.0",
+  "tools": [
+    "tools/hubspot_find_contacts.ts",
+    "tools/hubspot_get_contact.ts",
+    "tools/hubspot_add_note.ts",
+    "tools/hubspot_create_contact.ts",
+    "tools/hubspot_update_contact.ts"
+  ],
+  "skills": ["skills/hubspot-leads"],
+  "actauth": "actauth/rules.yml",
+  "env": [
+    { "name": "HUBSPOT_ACCESS_TOKEN", "description": "A HubSpot private app access token (starts \"pat-\") with the scopes crm.objects.contacts.read, crm.objects.contacts.write and crm.objects.companies.read. See this ability's README.", "secret": true, "scope": "overridable" }
+  ]
+}

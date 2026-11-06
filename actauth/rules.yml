@@ -1,0 +1,29 @@
+# Finding and reading contacts change nothing, so both are allowed.
+# Logging a note is allowed too: notes are internal (the contact never
+# sees them), and recording what the agent did is the point. Creating or
+# changing a contact edits the sales team's shared data, so both ask a
+# person first.
+- name: hubspot-find-contacts-allowed
+  scope: "*/*"
+  tool: hubspot_find_contacts
+  decision: allow
+
+- name: hubspot-get-contact-allowed
+  scope: "*/*"
+  tool: hubspot_get_contact
+  decision: allow
+
+- name: hubspot-add-note-allowed
+  scope: "*/*"
+  tool: hubspot_add_note
+  decision: allow
+
+- name: hubspot-create-contact-needs-approval
+  scope: "*/*"
+  tool: hubspot_create_contact
+  decision: ask
+
+- name: hubspot-update-contact-needs-approval
+  scope: "*/*"
+  tool: hubspot_update_contact
+  decision: ask
